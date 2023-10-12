@@ -1,10 +1,11 @@
-import 'package:demo_app/src/views/favorites.dart';
-import 'package:demo_app/src/views/messages.dart';
-import 'package:demo_app/src/views/search.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:medidoc/views/search.dart';
 
 import '../common_widgets/custom_navbar.dart';
-import 'home.dart';
+import 'notifications.dart';
+import 'home/home.dart';
+import 'messages.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class MainPageState extends State<MainPage> {
   final List<Widget> views = [
     const HomeScreen(),
     const Messages(),
-    const Favorite(),
+    const Notifications(),
     const Search()
   ];
   int selectedIndex = 0;
@@ -34,16 +35,16 @@ class MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNav(
         onItemTapped: onBottomNavItemTapped,
       ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: FloatingActionButton(
-      //   // clipBehavior: Clip.none,
-      //   backgroundColor: Colors.black45,
-      //   onPressed: () {},
-      //   child: const Icon(
-      //     Iconsax.shopping_bag,
-      //     color: Colors.white,
-      //   ),
-      // ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        // clipBehavior: Clip.none,
+        backgroundColor: Colors.black45,
+        onPressed: () {},
+        child: const Icon(
+          Iconsax.shopping_bag,
+          color: Colors.white,
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: views[selectedIndex],

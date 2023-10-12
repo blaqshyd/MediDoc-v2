@@ -1,5 +1,6 @@
-import 'package:demo_app/src/exceptions/snackbar.dart';
+
 import 'package:flutter/material.dart';
+import 'package:medidoc/exceptions/snackbar.dart';
 
 Future<void> snackBarMessage(BuildContext context) async {
   ScaffoldMessenger.of(context).showSnackBar(

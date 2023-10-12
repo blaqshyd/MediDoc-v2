@@ -1,4 +1,4 @@
-# demo_app
+# medidoc
 
 A new Flutter project.
 
